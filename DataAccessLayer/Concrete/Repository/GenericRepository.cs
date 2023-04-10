@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.Repository
 {
-    internal class GenericRepository<T> : IGenericDal<T> where T : class, new()
+    public class GenericRepository<T> : IGenericDal<T> where T : class, new()
     {
 
         public void Delete(T t)
@@ -20,7 +20,7 @@ namespace DataAccessLayer.Concrete.Repository
 
         public T GetById(int id)
         {
-            using var context =new ETicaretContext();
+            using var context = new ETicaretContext();
             return context.Set<T>().Find(id);
         }
 
