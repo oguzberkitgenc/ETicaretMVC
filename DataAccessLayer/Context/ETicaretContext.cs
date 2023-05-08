@@ -11,7 +11,12 @@ namespace DataAccessLayer.Context
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Company> Companies { get; set; }
+        //public DbSet<Company> Companies { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Admin>().HasNoKey();
+        }
+        public DbSet<Admin> Admin { get; set; }
     }
 }

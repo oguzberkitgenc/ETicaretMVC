@@ -1,0 +1,130 @@
+﻿@using EntityLayer.Tables
+@model List<Admin>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayaout.cshtml";
+}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Şirket Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-5 pr-md-1">
+                            <div class="form-group">
+                                <label>Şirket Adı</label>
+                                <input type="text" class="form-control" placeholder="Şirket">
+                            </div>
+                        </div>
+                        <div class="col-md-3 px-md-1">
+                            <div class="form-group">
+                                <label>Kullanıcı Adı</label>
+                                <input type="text" class="form-control" placeholder="Kullanıcı Adı">
+                            </div>
+                        </div>
+                        <div class="col-md-4 pl-md-1">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email adresi</label>
+                                <input type="email" class="form-control" placeholder="E-Mail Adresi">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 pr-md-1">
+                            <div class="form-group">
+                                <label>Ad</label>
+                                <input type="text" class="form-control" placeholder="Adı">  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-md-1">
+                            <div class="form-group">
+                                <label>Soyad</label>
+                                <input type="text" class="form-control" placeholder="Soyadı">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Adres</label>
+                                <input type="text" class="form-control" placeholder="Adres">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 pr-md-1">
+                            <div class="form-group">
+                                <label>Şehir</label>
+                                <input type="text" class="form-control" placeholder="Şehir">
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-md-1">
+                            <div class="form-group">
+                                <label>Ülke</label>
+                                <input type="text" class="form-control" placeholder="Ülke">
+                            </div>
+                        </div>
+                        <div class="col-md-4 pl-md-1">
+                            <div class="form-group">
+                                <label>Posta Kodu</label>
+                                <input type="number" class="form-control" placeholder="Posta Kodu">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>About Me</label>
+                                <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-user">
+            <div class="card-body">
+                <p class="card-text">
+                    <div class="author">
+                        <div class="block block-one"></div>
+                        <div class="block block-two"></div>
+                        <div class="block block-three"></div>
+                        <div class="block block-four"></div>
+                        <a href="javascript:void(0)">
+                            <img class="avatar" src="~/black-dashboard-master/assets/img/Screenshot_1.png" alt="...">
+                            <h5 class="title">Oğuz Berkit Genç</h5>
+                        </a>
+                        <p class="description">
+                            Kurucu/Kurucu-Ortak
+                        </p>
+                    </div>
+                </p>
+                <div class="card-description">
+                    Gerçeklerden korkmayın çünkü insan temelini gerçeğe yeniden başlatmamız gerekiyor
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="button-container">
+                    <button href="https://www.facebook.com/oberkitgenc" class="btn btn-icon btn-round btn-facebook">
+                        <i class="fab fa-facebook"></i>
+                    </button>
+                    <button href="https://www.instagram.com/oguzberkitgenc" class="btn btn-icon btn-round btn-instagram">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                    <button href="https://www.youtube.com/oguzberkitgenc" class="btn btn-icon btn-round btn-youtube">
+                        <i class="fab fa-youtube"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

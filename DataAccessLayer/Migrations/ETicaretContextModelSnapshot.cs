@@ -19,13 +19,8 @@ namespace DataAccessLayer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EntityLayer.Tables.Company", b =>
+            modelBuilder.Entity("EntityLayer.Tables.Admin", b =>
                 {
-                    b.Property<int>("CompanyID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
@@ -38,10 +33,25 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("GMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Hotmail")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("InstagramUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("News")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Payment")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
@@ -50,18 +60,43 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("PostalCode")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Product")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Region")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SaleNow")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubMainDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubMainTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subtitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Support")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TwitterUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("YoutubeUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CompanyID");
-
-                    b.ToTable("Companies");
+                    b.ToTable("Admin");
                 });
 
             modelBuilder.Entity("EntityLayer.Tables.Contact", b =>

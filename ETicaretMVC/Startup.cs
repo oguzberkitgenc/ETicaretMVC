@@ -36,6 +36,9 @@ namespace ETicaretMVC
             services.AddScoped<IITunesService, ITunesManager>();
             services.AddScoped<IITunesDal, EfITunesDal>();
 
+            services.AddScoped<IAdminService,IAdminManager>();
+            services.AddScoped<IAdminDal, EfAdminDal>();
+
             services.AddControllersWithViews();
         }
 
