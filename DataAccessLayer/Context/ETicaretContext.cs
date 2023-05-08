@@ -1,8 +1,9 @@
 ﻿using EntityLayer.Tables;
 using Microsoft.EntityFrameworkCore;
+
 namespace DataAccessLayer.Context
 {
-    public class ETicaretContext : DbContext
+    public class ETicaretContext  :  DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

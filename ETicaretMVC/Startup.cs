@@ -1,3 +1,7 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +27,15 @@ namespace ETicaretMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<INetflixService, NetflixManager>();
+            services.AddScoped<INetflixDal,EfNetflixDal>();
+
+            services.AddScoped<ISteamService,ISteamManager>();
+            services.AddScoped<ISteamDal, EfSteamDal>();
+
+            services.AddScoped<IITunesService, ITunesManager>();
+            services.AddScoped<IITunesDal, EfITunesDal>();
+
             services.AddControllersWithViews();
         }
 
