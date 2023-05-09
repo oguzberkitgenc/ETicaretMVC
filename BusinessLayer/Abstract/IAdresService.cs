@@ -1,4 +1,4 @@
-﻿using DataAccessLayer.Abstract.Base;
+﻿using BusinessLayer.Abstract.Base;
 using EntityLayer.Tables;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Abstract
+namespace BusinessLayer.Abstract
 {
-    public interface IAdminDal:IGenericDal<Admin>
+    public interface IAdresService : IGenericService<Adress>
     {
     }
 }

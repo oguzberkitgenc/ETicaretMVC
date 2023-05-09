@@ -4,14 +4,16 @@ using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(ETicaretContext))]
-    partial class ETicaretContextModelSnapshot : ModelSnapshot
+    [Migration("20230509180856_mig_yenidatalar")]
+    partial class mig_yenidatalar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +44,7 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admin");
                 });
 
             modelBuilder.Entity("EntityLayer.Tables.Adress", b =>
@@ -78,65 +80,6 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("ContactID");
 
                     b.ToTable("Contacts");
-                });
-
-            modelBuilder.Entity("EntityLayer.Tables.HomePage", b =>
-                {
-                    b.Property<string>("BottomGreenBox")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BottomGreenTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CenterPageBreak")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CenterPageBreakDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HomPageSubTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HomPageTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LeftPageBreak")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LeftPageBreakDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LowerCenter")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LowerCenterDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LowerLeft")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LowerLeftDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LowerRight")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LowerRightDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PageBreakTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PageBreakTitleDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RightPageBreak")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RightPageBreakDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("HomePagess");
                 });
 
             modelBuilder.Entity("EntityLayer.Tables.Product", b =>
@@ -189,7 +132,7 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("YoutubeUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("SocialMedias");
+                    b.ToTable("SocialMedia");
                 });
 
             modelBuilder.Entity("EntityLayer.Tables.User", b =>

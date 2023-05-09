@@ -9,31 +9,13 @@ namespace EntityLayer.Tables
 {
     public class Admin
     {
+        ///Admin Bilgileri
+        public string CompanyName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string SurName { get; set; }
         public string Phone { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string Region { get; set; }
-        public string PostalCode { get; set; }
-        public string Country { get; set; }
-        public string InstagramUrl { get; set; }
-        public string TwitterUrl { get; set; }
-        public string YoutubeUrl { get; set; }
-        public string GMail { get; set; }
-        public string Hotmail { get; set; }
-
-        public string Title { get; set; }
-        public string Subtitle { get; set; }
-        public string Product { get; set; }
-        public string Payment { get; set; }
-        public string SaleNow { get; set; }
-        public string Question { get; set; }
-        public string Support { get; set; }
-        public string News { get; set; }
-        public string SubMainTitle { get; set; }
-        public string SubMainDescription { get; set; }
+        public string EMail { get; set; }
     }
 }

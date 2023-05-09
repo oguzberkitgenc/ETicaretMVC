@@ -30,14 +30,20 @@ namespace ETicaretMVC
             services.AddScoped<INetflixService, NetflixManager>();
             services.AddScoped<INetflixDal,EfNetflixDal>();
 
-            services.AddScoped<ISteamService,ISteamManager>();
+            services.AddScoped<ISteamService,SteamManager>();
             services.AddScoped<ISteamDal, EfSteamDal>();
 
             services.AddScoped<IITunesService, ITunesManager>();
             services.AddScoped<IITunesDal, EfITunesDal>();
 
-            services.AddScoped<IAdminService,IAdminManager>();
+            services.AddScoped<IAdminService, AdminManager>();
             services.AddScoped<IAdminDal, EfAdminDal>();
+
+            services.AddScoped<ISocialMediaService,SocialMediaManager>();
+            services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+
+            services.AddScoped<IAdresService, AdresManager>();
+            services.AddScoped<IAdresDal, EfAdresDal>();
 
             services.AddControllersWithViews();
         }

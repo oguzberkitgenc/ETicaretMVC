@@ -1,10 +1,9 @@
 ﻿@using EntityLayer.Tables
-@model List<Admin>
+@model List<SocialMedia>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "SocialMedia";
     Layout = "~/Views/Shared/AdminLayaout.cshtml";
 }
-
 <div class="row">
     <div class="col-md-8">
         <div class="card">
@@ -16,50 +15,30 @@
                     @foreach (var item in Model)
                     {
                         <div class="row">
-                            <div class="col-md-5 pr-md-1">
+                            <div class="col-md-6 pr-md-1">
                                 <div class="form-group">
-                                    <label>Şirket Adı</label>
-                                    <input type="text" class="form-control" placeholder="Şirket" value="@item.CompanyName">
+                                    <label>Instagram Adresi</label>
+                                    <input type="text" class="form-control" placeholder="Instagram Adresi" value="@item.InstagramUrl"> 
                                 </div>
                             </div>
-                            <div class="col-md-3 px-md-1">
+                            <div class="col-md-6 pl-md-1">
                                 <div class="form-group">
-                                    <label>Kullanıcı Adı</label>
-                                    <input type="text" class="form-control" placeholder="Kullanıcı adı" value="@item.UserName">
-                                </div>
-                            </div>
-                            <div class="col-md-4 pl-md-1">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Şifre</label>
-                                    <input type="password" class="form-control" placeholder="Şifre" value="@item.Password">
+                                    <label>Facebook Adresi</label>
+                                    <input type="text" class="form-control" placeholder="Facebook Adresi" value="@item.FacebookUrl">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 pr-md-1">
                                 <div class="form-group">
-                                    <label>Ad</label>
-                                    <input type="text" class="form-control" placeholder="Adı" value="@item.Name">  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
+                                    <label>Youtube Adresi</label>
+                                    <input type="text" class="form-control" placeholder="Youtube Adresi" value="@item.YoutubeUrl">  
                                 </div>
                             </div>
                             <div class="col-md-6 pl-md-1">
                                 <div class="form-group">
-                                    <label>Soyad</label>
-                                    <input type="text" class="form-control" placeholder="Soyadı" value="@item.SurName">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 pr-md-1">
-                                <div class="form-group">
-                                    <label>Telefon Numarası</label>
-                                    <input type="tel" class="form-control" placeholder="Telefon Numarası" value="@item.Phone">  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
-                                </div>
-                            </div>
-                            <div class="col-md-6 pl-md-1">
-                                <div class="form-group">
-                                    <label>Mail Adresi</label>
-                                    <input type="email" class="form-control" placeholder="Mail Adresi" value="@item.EMail">
+                                    <label>Twitter Adresi</label>
+                                    <input type="text" class="form-control" placeholder="Twitter Adresi" value="@item.TwitterUrl">
                                 </div>
                             </div>
                         </div>
@@ -108,6 +87,5 @@
         </div>
     </div>
 </div>
-
 
 

@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class ISteamManager : ISteamService
+    public class SteamManager : ISteamService
     {
         private readonly ISteamDal _steamDal;
 
-        public ISteamManager(ISteamDal steamDal)
+        public SteamManager(ISteamDal steamDal)
         {
             _steamDal = steamDal;
         }

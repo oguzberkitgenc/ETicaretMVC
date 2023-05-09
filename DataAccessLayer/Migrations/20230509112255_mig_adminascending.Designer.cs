@@ -4,14 +4,16 @@ using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(ETicaretContext))]
-    partial class ETicaretContextModelSnapshot : ModelSnapshot
+    [Migration("20230509112255_mig_adminascending")]
+    partial class mig_adminascending
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,67 +23,9 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Tables.Admin", b =>
                 {
-                    b.Property<string>("CompanyName")
+                    b.Property<string>("Adress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EMail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SurName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("Admins");
-                });
-
-            modelBuilder.Entity("EntityLayer.Tables.Adress", b =>
-                {
-                    b.Property<string>("Adres")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PostaCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("Adress");
-                });
-
-            modelBuilder.Entity("EntityLayer.Tables.Contact", b =>
-                {
-                    b.Property<int>("ContactID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ContactID");
-
-                    b.ToTable("Contacts");
-                });
-
-            modelBuilder.Entity("EntityLayer.Tables.HomePage", b =>
-                {
                     b.Property<string>("BottomGreenBox")
                         .HasColumnType("nvarchar(max)");
 
@@ -94,16 +38,37 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("CenterPageBreakDesc")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EMail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("HomPageSubTitle")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HomPageTitle")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("InstagramUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LeftPageBreak")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LeftPageBreakDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LinkedinUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LowerCenter")
@@ -124,10 +89,25 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("LowerRightDesc")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NullUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PageBreakTitle")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PageBreakTitleDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostaCode")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RightPageBreak")
@@ -136,7 +116,37 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("RightPageBreakDesc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("HomePagess");
+                    b.Property<string>("SurName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TwitterUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("YoutubeUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Admin");
+                });
+
+            modelBuilder.Entity("EntityLayer.Tables.Contact", b =>
+                {
+                    b.Property<int>("ContactID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContactID");
+
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("EntityLayer.Tables.Product", b =>
@@ -167,29 +177,6 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("ProductID");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("EntityLayer.Tables.SocialMedia", b =>
-                {
-                    b.Property<string>("FacebookUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("InstagramUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LinkedinUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NullUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TwitterUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("YoutubeUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("SocialMedias");
                 });
 
             modelBuilder.Entity("EntityLayer.Tables.User", b =>

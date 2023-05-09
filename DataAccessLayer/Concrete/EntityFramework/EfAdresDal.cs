@@ -4,7 +4,7 @@ using EntityLayer.Tables;
 
 namespace DataAccessLayer.Concrete.EntityFramework
 {
-    public class EfContactDal : GenericRepository<Contact>,IContactDal
+    public class EfAdresDal : GenericRepository<Adress>,IAdresDal
     {
     }
 }

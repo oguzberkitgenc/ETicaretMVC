@@ -1,0 +1,195 @@
+﻿@using EntityLayer.Tables
+@model List<Adress>
+@{
+    ViewData["Title"] = "Adres";
+    Layout = "~/Views/Shared/AdminLayaout.cshtml";
+}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Şirket Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    @foreach (var item in Model)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Adres</label>
+                                    <input type="text" class="form-control" placeholder="Adres" value="@item.Adres">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-md-1">
+                                <div class="form-group">
+                                    <label>Şehir</label>
+                                    <input type="text" class="form-control" placeholder="Şehir" value="@item.City">
+                                </div>
+                            </div>
+                            <div class="col-md-4 px-md-1">
+                                <div class="form-group">
+                                    <label>Ülke</label>
+                                    <input type="text" class="form-control" placeholder="Ülke" value="@item.Country">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-md-1">
+                                <div class="form-group">
+                                    <label>Posta Kodu</label>
+                                    <input type="number" class="form-control" placeholder="Posta Kodu" value="@item.PostaCode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>Ana Sayfa Başlık</label>
+                                    <input type="text" class="form-control" placeholder="Ana Sayfa Başlık">  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-md-1">
+                                <div class="form-group">
+                                    <label>Ana Sayfa Alt Başlık</label>
+                                    <input type="text" class="form-control" placeholder="Ana Sayfa Alt Başlık">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-md-1">
+                                <div class="form-group">
+                                    <label>Alt Sol Başlık</label>
+                                    <input type="text" class="form-control" placeholder="Alt Sol Başlık">
+                                </div>
+                            </div>
+                            <div class="col-md-4 px-md-1">
+                                <div class="form-group">
+                                    <label>Alt Orta Başlık</label>
+                                    <input type="text" class="form-control" placeholder="Alt Orta Başlık">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-md-1">
+                                <div class="form-group">
+                                    <label>Alt Sağ Başlık</label>
+                                    <input type="number" class="form-control" placeholder="Alt Sağ Başlık">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Alt Sol Başlık Açıklama</label>
+                                <textarea class="form-control" rows="3" placeholder="Alt Sol Başlık Açıklama"></textarea>
+                            </div>
+                            <div class="col">
+                                <label>Alt Orta Başlık Açıklama</label>
+                                <textarea class="form-control" rows="3" placeholder="Alt Orta Başlık Açıklama"></textarea>
+                            </div>
+                            <div class="col">
+                                <label>Alt Sağ Başlık Açıklama</label>
+                                <textarea class="form-control" rows="3" placeholder="Alt Sağ Başlık Açıklama"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-md-1">
+                                <div class="form-group">
+                                    <label>Sayfa Sonu Sol Başlık</label>
+                                    <input type="text" class="form-control" placeholder="Sayfa Sonu Sol Başlık">
+                                </div>
+                            </div>
+                            <div class="col-md-4 px-md-1">
+                                <div class="form-group">
+                                    <label>Sayfa Sonu Orta Başlık</label>
+                                    <input type="text" class="form-control" placeholder="Sayfa Sonu Orta Başlık">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-md-1">
+                                <div class="form-group">
+                                    <label>Sayfa Sonu Sağ Başlık</label>
+                                    <input type="number" class="form-control" placeholder="Sayfa Sonu Sağ Başlık">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Sayfa Sonu Sol Başlık Açıklama</label>
+                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sol Başlık Açıklama"></textarea>
+                            </div>
+                            <div class="col">
+                                <label>Sayfa Sonu Orta Başlık Açıklama</label>
+                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Orta Başlık Açıklama"></textarea>
+                            </div>
+                            <div class="col">
+                                <label>Sayfa Sonu Sağ Başlık Açıklama</label>
+                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sağ Başlık Açıklama"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Sayfa Sonu Başlık</label>
+                            <input type="text" class="form-control" placeholder="Sayfa Sonu Orta Başlık">
+                        </div>
+                        <div class="col">
+                            <label>Sayfa Sonu Başlık Açıklama</label>
+                            <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sol Başlık Açıklama"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>Alt Yeşil Alan</label>
+                                    <input type="text" class="form-control" placeholder="Alt Yeşil Alan">
+                                </div>
+                            </div>
+                            <div class="col-md-6  px-md-1">
+                                <div class="form-group">
+                                    <label>Yeşil Alan Kutu İçi</label>
+                                    <input type="text" class="form-control" placeholder="Yeşil Alan Kutu İçi">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-user">
+            <div class="card-body">
+                <p class="card-text">
+                    <div class="author">
+                        <div class="block block-one"></div>
+                        <div class="block block-two"></div>
+                        <div class="block block-three"></div>
+                        <div class="block block-four"></div>
+                        <a href="javascript:void(0)">
+                            <img class="avatar" src="~/black-dashboard-master/assets/img/Screenshot_1.png" alt="...">
+                            <h5 class="title">Oğuz Berkit Genç</h5>
+                        </a>
+                        <p class="description">
+                            Kurucu/Kurucu-Ortak
+                        </p>
+                    </div>
+                </p>
+                <div class="card-description">
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="button-container">
+                    <button href="https://www.facebook.com/oberkitgenc" class="btn btn-icon btn-round btn-facebook">
+                        <i class="fab fa-facebook"></i>
+                    </button>
+                    <button href="https://www.instagram.com/oguzberkitgenc" class="btn btn-icon btn-round btn-instagram">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                    <button href="https://www.youtube.com/oguzberkitgenc" class="btn btn-icon btn-round btn-youtube">
+                        <i class="fab fa-youtube"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
