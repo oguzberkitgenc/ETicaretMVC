@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Abstract;
+using EntityLayer.Tables;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace ETicaretMVC.Controllers
 {
@@ -14,7 +16,8 @@ namespace ETicaretMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var values = _productService.GetListAll();
+            return View(values);
         }
     }
 }
