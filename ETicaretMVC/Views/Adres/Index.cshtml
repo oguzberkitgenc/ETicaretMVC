@@ -1,8 +1,8 @@
 ﻿@using EntityLayer.Tables
-@model List<SocialMedia>
+@model List<Adress>
 @{
-    ViewData["Title"] = "SocialMedia";
-    Layout = "~/Views/Shared/AdminLayaout.cshtml";
+    ViewData["Title"] = "Adres";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
 }
 <div class="row">
     <div class="col-md-8">
@@ -15,30 +15,30 @@
                     @foreach (var item in Model)
                     {
                         <div class="row">
-                            <div class="col-md-6 pr-md-1">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Instagram Adresi</label>
-                                    <input type="text" class="form-control" placeholder="Instagram Adresi" value="@item.InstagramUrl"> 
-                                </div>
-                            </div>
-                            <div class="col-md-6 pl-md-1">
-                                <div class="form-group">
-                                    <label>Facebook Adresi</label>
-                                    <input type="text" class="form-control" placeholder="Facebook Adresi" value="@item.FacebookUrl">
+                                    <label>Adres</label>
+                                    <input type="text" class="form-control" placeholder="Adres" value="@item.Adres">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 pr-md-1">
+                            <div class="col-md-4 pr-md-1">
                                 <div class="form-group">
-                                    <label>Youtube Adresi</label>
-                                    <input type="text" class="form-control" placeholder="Youtube Adresi" value="@item.YoutubeUrl">  
+                                    <label>Şehir</label>
+                                    <input type="text" class="form-control" placeholder="Şehir" value="@item.City">
                                 </div>
                             </div>
-                            <div class="col-md-6 pl-md-1">
+                            <div class="col-md-4 px-md-1">
                                 <div class="form-group">
-                                    <label>Twitter Adresi</label>
-                                    <input type="text" class="form-control" placeholder="Twitter Adresi" value="@item.TwitterUrl">
+                                    <label>Ülke</label>
+                                    <input type="text" class="form-control" placeholder="Ülke" value="@item.Country">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-md-1">
+                                <div class="form-group">
+                                    <label>Posta Kodu</label>
+                                    <input type="number" class="form-control" placeholder="Posta Kodu" value="@item.PostaCode">
                                 </div>
                             </div>
                         </div>

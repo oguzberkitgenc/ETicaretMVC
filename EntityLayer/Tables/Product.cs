@@ -14,6 +14,7 @@ namespace EntityLayer.Tables
         public int Stock { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
+        public int TotalSales { get; set; }
         public DateTime? DateAdd { get; set; }
     }
 }

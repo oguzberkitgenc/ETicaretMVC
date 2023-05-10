@@ -1,8 +1,8 @@
 ﻿@using EntityLayer.Tables
-@model List<Adress>
+@model List<HomePage>
 @{
-    ViewData["Title"] = "Adres";
-    Layout = "~/Views/Shared/AdminLayaout.cshtml";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
 }
 <div class="row">
     <div class="col-md-8">
@@ -15,44 +15,16 @@
                     @foreach (var item in Model)
                     {
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Adres</label>
-                                    <input type="text" class="form-control" placeholder="Adres" value="@item.Adres">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 pr-md-1">
-                                <div class="form-group">
-                                    <label>Şehir</label>
-                                    <input type="text" class="form-control" placeholder="Şehir" value="@item.City">
-                                </div>
-                            </div>
-                            <div class="col-md-4 px-md-1">
-                                <div class="form-group">
-                                    <label>Ülke</label>
-                                    <input type="text" class="form-control" placeholder="Ülke" value="@item.Country">
-                                </div>
-                            </div>
-                            <div class="col-md-4 pl-md-1">
-                                <div class="form-group">
-                                    <label>Posta Kodu</label>
-                                    <input type="number" class="form-control" placeholder="Posta Kodu" value="@item.PostaCode">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6 pr-md-1">
                                 <div class="form-group">
                                     <label>Ana Sayfa Başlık</label>
-                                    <input type="text" class="form-control" placeholder="Ana Sayfa Başlık">  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
+                                    <input type="text" class="form-control" placeholder="Ana Sayfa Başlık" value="@item.HomPageTitle">
                                 </div>
                             </div>
                             <div class="col-md-6 pl-md-1">
                                 <div class="form-group">
                                     <label>Ana Sayfa Alt Başlık</label>
-                                    <input type="text" class="form-control" placeholder="Ana Sayfa Alt Başlık">
+                                    <input type="text" class="form-control" placeholder="Ana Sayfa Alt Başlık" value="@item.HomPageSubTitle">
                                 </div>
                             </div>
                         </div>
@@ -90,6 +62,7 @@
                                 <textarea class="form-control" rows="3" placeholder="Alt Sağ Başlık Açıklama"></textarea>
                             </div>
                         </div>
+                        <br />
                         <div class="row">
                             <div class="col-md-4 pr-md-1">
                                 <div class="form-group">
@@ -191,5 +164,8 @@
         </div>
     </div>
 </div>
+
+
+
 
 
