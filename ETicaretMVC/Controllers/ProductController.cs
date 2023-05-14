@@ -13,11 +13,21 @@ namespace ETicaretMVC.Controllers
         {
             _productService = productService;
         }
-
         public IActionResult Index()
         {
             var values = _productService.GetListAll();
             return View(values);
+        }
+        [HttpGet]
+        public IActionResult InsertProduct()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult InsertProduct(Product p)
+        {
+            _productService.Insert(p);
+            return RedirectToAction("Index");
         }
     }
 }

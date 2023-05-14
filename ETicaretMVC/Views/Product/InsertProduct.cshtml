@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Tables.Product
+@{
+    ViewData["Title"] = "InsertProduct";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+
+<form method="post">
+    <h4>Ürün Ekleme Sayfası</h4>
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" placeholder="Ürün Adı" asp-for="Name" />
+    </div>
+    <div class="row" style="margin-top:5px">
+        <div class="col">
+            <label>Satış Fiyatı</label>
+            <input type="text" class="form-control" placeholder="Satış Fiyatı" asp-for="Price" />
+        </div>
+        <div class="col">
+            <label>Stok</label>
+            <input type="text" class="form-control" placeholder="Stok" asp-for="Stock" />
+        </div>
+    </div>
+    <div style="margin-top:5px">
+        <label style="margin-top:5px">Ürün Açıklaması</label>
+        <textarea class="form-control" placeholder="Ürün Açıklaması" asp-for="Description"></textarea>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-info">Kaydet</button>
+</form>
+

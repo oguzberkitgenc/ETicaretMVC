@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Tables.Adress
+@{
+    ViewData["Title"] = "UpdateAdres";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Adres Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    @Html.HiddenFor(x=>x.ID)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Adres</label>
+                                <input type="text" class="form-control" placeholder="Adres" asp-for="Adres">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 pr-md-1">
+                            <div class="form-group">
+                                <label>Şehir</label>
+                                <input type="text" class="form-control" placeholder="Şehir" asp-for="City">
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-md-1">
+                            <div class="form-group">
+                                <label>Ülke</label>
+                                <input type="text" class="form-control" placeholder="Ülke" asp-for="Country">
+                            </div>
+                        </div>
+                        <div class="col-md-4 pl-md-1">
+                            <div class="form-group">
+                                <label>Posta Kodu</label>
+                                <input type="number" class="form-control" placeholder="Posta Kodu" asp-for="PostaCode">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

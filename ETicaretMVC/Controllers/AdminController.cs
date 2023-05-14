@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using EntityLayer.Tables;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ETicaretMVC.Controllers
@@ -6,35 +7,28 @@ namespace ETicaretMVC.Controllers
     public class AdminController : Controller
     {
         private readonly IAdminService _adminService;
-        private readonly IAdresService _adresService;
 
-        public AdminController(IAdminService adminService,  IAdresService adresService)
+        public AdminController(IAdminService adminService)
         {
             _adminService = adminService;
-            _adresService = adresService;
         }
-
         public IActionResult Index()
         {
             var values = _adminService.GetListAll();
             return View(values);
         }
-        //public IActionResult SocialMedia()
-        //{
-        //    var values2 = _socialMediaService.GetListAll();
-        //    return View("~/Views/Admin/SocialMedia.cshtml",values2);
-        //}
-
-        public IActionResult Adres()
+        [HttpGet]
+        public IActionResult UpdateAdmin(int id)
         {
-            var values3 = _adresService.GetListAll();
-            return View("~/Views/Admin/Adres.cshtml", values3);
+            id = 1;
+            var values = _adminService.GetById(id);
+            return View(values);
         }
-
-        //public IActionResult HomePage()
-        //{
-        //    var values4 = _homePageService.GetListAll();
-        //    return View("~/Views/Admin/HomePage.cshtml", values4);
-        //}
+        [HttpPost]
+        public IActionResult UpdateAdmin(Admin admin)
+        {
+            _adminService.Update(admin);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Tables.SocialMedia
+@{
+    ViewData["Title"] = "UpdateSocial";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Sosyal Medya Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    @Html.HiddenFor(x=>x.ID)
+                    <div class="row">
+                        <div class="col-md-6 pr-md-1">
+                            <div class="form-group">
+                                <label>Instagram Adresi</label>
+                                <input type="text" class="form-control" placeholder="Instagram Adresi" asp-for="InstagramUrl" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-md-1">
+                            <div class="form-group">
+                                <label>Facebook Adresi</label>
+                                <input type="text" class="form-control" placeholder="Facebook Adresi" asp-for="FacebookUrl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 pr-md-1">
+                            <div class="form-group">
+                                <label>Youtube Adresi</label>
+                                <input type="text" class="form-control" placeholder="Youtube Adresi" asp-for="YoutubeUrl">
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-md-1">
+                            <div class="form-group">
+                                <label>Twitter Adresi</label>
+                                <input type="text" class="form-control" placeholder="Twitter Adresi" asp-for="TwitterUrl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,4 +1,6 @@
-﻿@{
+﻿@using EntityLayer.Tables
+@model List<HomePage>
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_GeneralLayaout.cshtml";
 }
@@ -6,55 +8,63 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="text-homeimage">
-                <div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
-                    Dijital Dünyada Öncelikli Olun
-                </div>
-                <div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
-                    Be a Priority in the Digital World
-                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
+                        @item.HomPageTitle
+                    </div>
+                    <div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
+                        @item.HomPageSubTitle
+                    </div>
+                }
+
             </div>
         </div>
     </div>
 </div>
     </header>
 <!-- STEPS =============================-->
-<div class="item content">
-    <div class="container toparea">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="col editContent">
-                    <span class="numberstep"><i class="fa fa-shopping-cart"></i></span>
-                    <h3 class="numbertext">Choose our Products</h3>
-                    <p>
-                        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                    </p>
+@foreach (var item in Model)
+{
+    <div class="item content">
+        <div class="container toparea">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="col editContent">
+                        <span class="numberstep"><i class="fa fa-shopping-cart"></i></span>
+                        <h3 class="numbertext">@item.LowerLeft</h3>
+                        <p>
+                            @item.LowerLeftDesc
+                        </p>
+                    </div>
+                    <!-- /.col-md-4 -->
                 </div>
-                <!-- /.col-md-4 -->
-            </div>
-            <!-- /.col-md-4 col -->
-            <div class="col-md-4 editContent">
-                <div class="col">
-                    <span class="numberstep"><i class="fa fa-gift"></i></span>
-                    <h3 class="numbertext">Pay with PayPal or Card</h3>
-                    <p>
-                        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                    </p>
+                <!-- /.col-md-4 col -->
+                <div class="col-md-4 editContent">
+                    <div class="col">
+                        <span class="numberstep"><i class="fa fa-gift"></i></span>
+                        <h3 class="numbertext">@item.LowerCenter</h3>
+                        <p>
+                            @item.LowerCenterDesc
+                        </p>
+                    </div>
+                    <!-- /.col -->
                 </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.col-md-4 col -->
-            <div class="col-md-4 editContent">
-                <div class="col">
-                    <span class="numberstep"><i class="fa fa-download"></i></span>
-                    <h3 class="numbertext">Get Instand Download</h3>
-                    <p>
-                        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                    </p>
+                <!-- /.col-md-4 col -->
+                <div class="col-md-4 editContent">
+                    <div class="col">
+                        <span class="numberstep"><i class="fa fa-download"></i></span>
+                        <h3 class="numbertext">@item.LowerRight</h3>
+                        <p>
+                            @item.LowerRightDesc
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+
 <!-- LATEST ITEMS =============================-->
 <section class="item content">
     <div class="container">
@@ -210,6 +220,7 @@
     </div>
 </div>
 <!-- TESTIMONIAL =============================-->
+
 <div class="item content">
     <div class="container">
         <div class="col-md-10 col-md-offset-1">

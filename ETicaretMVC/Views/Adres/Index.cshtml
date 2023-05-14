@@ -8,7 +8,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <h5 class="title">Şirket Bilgileri</h5>
+                <h5 class="title">Adres Bilgileri</h5>
             </div>
             <div class="card-body">
                 <form>
@@ -18,7 +18,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Adres</label>
-                                    <input type="text" class="form-control" placeholder="Adres" value="@item.Adres">
+                                    <input type="text" class="form-control" placeholder="Adres" value="@item.Adres" readonly>
                                 </div>
                             </div>
                         </div>
@@ -26,19 +26,19 @@
                             <div class="col-md-4 pr-md-1">
                                 <div class="form-group">
                                     <label>Şehir</label>
-                                    <input type="text" class="form-control" placeholder="Şehir" value="@item.City">
+                                    <input type="text" class="form-control" placeholder="Şehir" value="@item.City" readonly>
                                 </div>
                             </div>
                             <div class="col-md-4 px-md-1">
                                 <div class="form-group">
                                     <label>Ülke</label>
-                                    <input type="text" class="form-control" placeholder="Ülke" value="@item.Country">
+                                    <input type="text" class="form-control" placeholder="Ülke" value="@item.Country" readonly>
                                 </div>
                             </div>
                             <div class="col-md-4 pl-md-1">
                                 <div class="form-group">
                                     <label>Posta Kodu</label>
-                                    <input type="number" class="form-control" placeholder="Posta Kodu" value="@item.PostaCode">
+                                    <input type="number" class="form-control" placeholder="Posta Kodu" value="@item.PostaCode" readonly>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                 </form>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                <a href="/Adres/UpdateAdres " class="btn btn-fill btn-primary">Düzenle</a>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
             </div>
             <div class="card-footer">
                 <div class="button-container">
-                    <button href="https://www.facebook.com/oberkitgenc" class="btn btn-icon btn-round btn-facebook">
+                    <button  href="https://www.facebook.com/oberkitgenc" class="btn btn-icon btn-round btn-facebook">
                         <i class="fab fa-facebook"></i>
                     </button>
                     <button href="https://www.instagram.com/oguzberkitgenc" class="btn btn-icon btn-round btn-instagram">

@@ -9,6 +9,7 @@ namespace EntityLayer.Tables
     public class HomePage
     {
         //AnaSayfa Bilgileri
+        public int ID { get; set; }
         public string HomPageTitle { get; set; }
         public string HomPageSubTitle { get; set; }
         public string LowerLeft { get; set; }
@@ -17,6 +18,7 @@ namespace EntityLayer.Tables
         public string LowerLeftDesc { get; set; }
         public string LowerCenterDesc { get; set; }
         public string LowerRightDesc { get; set; }
+
         public string LeftPageBreak { get; set; }
         public string CenterPageBreak { get; set; }
         public string RightPageBreak { get; set; }

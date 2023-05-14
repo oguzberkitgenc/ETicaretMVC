@@ -9,7 +9,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <h5 class="title">Şirket Bilgileri</h5>
+                <h5 class="title">Admin Bilgileri</h5>
             </div>
             <div class="card-body">
                 <form>
@@ -19,19 +19,19 @@
                             <div class="col-md-5 pr-md-1">
                                 <div class="form-group">
                                     <label>Şirket Adı</label>
-                                    <input type="text" class="form-control" placeholder="Şirket" value="@item.CompanyName">
+                                    <input type="text" class="form-control" placeholder="Şirket" value="@item.CompanyName" readonly>
                                 </div>
                             </div>
                             <div class="col-md-3 px-md-1">
                                 <div class="form-group">
                                     <label>Kullanıcı Adı</label>
-                                    <input type="text" class="form-control" placeholder="Kullanıcı adı" value="@item.UserName">
+                                    <input type="text" class="form-control" placeholder="Kullanıcı adı" value="@item.UserName" readonly>
                                 </div>
                             </div>
                             <div class="col-md-4 pl-md-1">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Şifre</label>
-                                    <input type="password" class="form-control" placeholder="Şifre" value="@item.Password">
+                                    <label>Şifre</label>
+                                    <input type="password" class="form-control" placeholder="Şifre" value="@item.Password" readonly>
                                 </div>
                             </div>
                         </div>
@@ -39,13 +39,13 @@
                             <div class="col-md-6 pr-md-1">
                                 <div class="form-group">
                                     <label>Ad</label>
-                                    <input type="text" class="form-control" placeholder="Adı" value="@item.Name">  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
+                                    <input type="text" class="form-control" placeholder="Adı" value="@item.Name" readonly>  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
                                 </div>
                             </div>
                             <div class="col-md-6 pl-md-1">
                                 <div class="form-group">
                                     <label>Soyad</label>
-                                    <input type="text" class="form-control" placeholder="Soyadı" value="@item.SurName">
+                                    <input type="text" class="form-control" placeholder="Soyadı" value="@item.SurName" readonly>
                                 </div>
                             </div>
                         </div>
@@ -53,13 +53,13 @@
                             <div class="col-md-6 pr-md-1">
                                 <div class="form-group">
                                     <label>Telefon Numarası</label>
-                                    <input type="tel" class="form-control" placeholder="Telefon Numarası" value="@item.Phone">  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
+                                    <input type="tel" class="form-control" placeholder="Telefon Numarası" value="@item.Phone" readonly>  <!--value= değeri atayarak sql'den veriler getiriliebilri-->
                                 </div>
                             </div>
                             <div class="col-md-6 pl-md-1">
                                 <div class="form-group">
                                     <label>Mail Adresi</label>
-                                    <input type="email" class="form-control" placeholder="Mail Adresi" value="@item.EMail">
+                                    <input type="email" class="form-control" placeholder="Mail Adresi" value="@item.EMail" readonly>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                 </form>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                <a href="/Admin/UpdateAdmin " class="btn btn-fill btn-primary">Düzenle</a>
             </div>
         </div>
     </div>

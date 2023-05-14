@@ -9,6 +9,7 @@ namespace EntityLayer.Tables
     public class SocialMedia
     {
         //Sosyal Medya Bilgileri
+        public int ID { get; set; }
         public string InstagramUrl { get; set; }
         public string FacebookUrl { get; set; }
         public string YoutubeUrl { get; set; }

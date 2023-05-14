@@ -1,0 +1,71 @@
+﻿@model EntityLayer.Tables.Admin
+@{
+    ViewData["Title"] = "UpdateAdmin";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Admin Bilgileri</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    @Html.HiddenFor(x=>x.ID)
+                        <div class="row">
+                            <div class="col-md-5 pr-md-1">
+                                <div class="form-group">
+                                    <label>Şirket Adı</label>
+                                    <input type="text" class="form-control" placeholder="Şirket" asp-for="CompanyName">
+                                </div>
+                            </div>
+                            <div class="col-md-3 px-md-1">
+                                <div class="form-group">
+                                    <label>Kullanıcı Adı</label>
+                                <input type="text" class="form-control" placeholder="Kullanıcı adı" asp-for="UserName">
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-md-1">
+                                <div class="form-group">
+                                    <label>Şifre</label>
+                                <input type="text" class="form-control" placeholder="Şifre" asp-for="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>Ad</label>
+                                <input type="text" class="form-control" placeholder="Adı" asp-for="Name"> 
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-md-1">
+                                <div class="form-group">
+                                    <label>Soyad</label>
+                                <input type="text" class="form-control" placeholder="Soyadı" asp-for="SurName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-md-1">
+                                <div class="form-group">
+                                    <label>Telefon Numarası</label>
+                                <input type="tel" class="form-control" placeholder="Telefon Numarası" asp-for="Phone">  
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-md-1">
+                                <div class="form-group">
+                                    <label>Mail Adresi</label>
+                                <input type="email" class="form-control" placeholder="Mail Adresi" asp-for="EMail">
+                                </div>
+                            </div>
+                        </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

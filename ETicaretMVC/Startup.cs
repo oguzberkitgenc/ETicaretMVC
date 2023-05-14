@@ -51,6 +51,9 @@ namespace ETicaretMVC
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IProductDal,EfProductDal>();
 
+            services.AddScoped<IHomeService,HomeManager>();
+            services.AddScoped<IHomeDal, EfHomeDal>();
+
             services.AddControllersWithViews();
         }
 

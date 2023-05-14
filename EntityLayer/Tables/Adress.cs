@@ -9,6 +9,7 @@ namespace EntityLayer.Tables
     public class Adress
     {
         //Adres Bilgileri
+        public int ID { get; set; }
         public string Adres { get; set; }
         public string Country { get; set; }
         public string City { get; set; }

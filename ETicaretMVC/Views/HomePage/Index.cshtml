@@ -28,94 +28,97 @@
                                 </div>
                             </div>
                         </div>
+                        <hr style="border: none; border-top: 1px solid #00bfff; margin: 10px 0;">
                         <div class="row">
                             <div class="col-md-4 pr-md-1">
                                 <div class="form-group">
                                     <label>Alt Sol Başlık</label>
-                                    <input type="text" class="form-control" placeholder="Alt Sol Başlık">
+                                    <input type="text" class="form-control" placeholder="Alt Sol Başlık" value="@item.LowerLeft">
                                 </div>
                             </div>
                             <div class="col-md-4 px-md-1">
                                 <div class="form-group">
                                     <label>Alt Orta Başlık</label>
-                                    <input type="text" class="form-control" placeholder="Alt Orta Başlık">
+                                    <input type="text" class="form-control" placeholder="Alt Orta Başlık" value="@item.LowerCenter">
                                 </div>
                             </div>
                             <div class="col-md-4 pl-md-1">
                                 <div class="form-group">
                                     <label>Alt Sağ Başlık</label>
-                                    <input type="number" class="form-control" placeholder="Alt Sağ Başlık">
+                                    <input type="text" class="form-control" placeholder="Alt Sağ Başlık" value="@item.LowerRight">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label>Alt Sol Başlık Açıklama</label>
-                                <textarea class="form-control" rows="3" placeholder="Alt Sol Başlık Açıklama"></textarea>
+                                @*<label>Alt Sol Başlık Açıklama</label>*@
+                                <textarea type="text" class="form-control" rows="3" placeholder="Alt Sol Başlık Açıklama">@item.LowerLeftDesc</textarea>
                             </div>
                             <div class="col">
-                                <label>Alt Orta Başlık Açıklama</label>
-                                <textarea class="form-control" rows="3" placeholder="Alt Orta Başlık Açıklama"></textarea>
+                                @*<label>Alt Orta Başlık Açıklama</label>*@
+                                <textarea type="text" class="form-control" rows="3" placeholder="Alt Orta Başlık Açıklama">@item.LowerCenterDesc</textarea>
                             </div>
                             <div class="col">
-                                <label>Alt Sağ Başlık Açıklama</label>
-                                <textarea class="form-control" rows="3" placeholder="Alt Sağ Başlık Açıklama"></textarea>
+                                @*<label>Alt Sağ Başlık Açıklama</label>*@
+                                <textarea type="text" class="form-control" rows="3" placeholder="Alt Sağ Başlık Açıklama">@item.LowerRightDesc</textarea>
                             </div>
                         </div>
-                        <br />
+                        <hr style="border: none; border-top: 1px solid #00bfff; margin: 10px 0;">
                         <div class="row">
                             <div class="col-md-4 pr-md-1">
                                 <div class="form-group">
                                     <label>Sayfa Sonu Sol Başlık</label>
-                                    <input type="text" class="form-control" placeholder="Sayfa Sonu Sol Başlık">
+                                    <input type="text" class="form-control" placeholder="Sayfa Sonu Sol Başlık" value="@item.LeftPageBreak">
                                 </div>
                             </div>
                             <div class="col-md-4 px-md-1">
                                 <div class="form-group">
                                     <label>Sayfa Sonu Orta Başlık</label>
-                                    <input type="text" class="form-control" placeholder="Sayfa Sonu Orta Başlık">
+                                    <input type="text" class="form-control" placeholder="Sayfa Sonu Orta Başlık" value="@item.CenterPageBreak">
                                 </div>
                             </div>
                             <div class="col-md-4 pl-md-1">
                                 <div class="form-group">
                                     <label>Sayfa Sonu Sağ Başlık</label>
-                                    <input type="number" class="form-control" placeholder="Sayfa Sonu Sağ Başlık">
+                                    <input type="text" class="form-control" placeholder="Sayfa Sonu Sağ Başlık" value="@item.RightPageBreak">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label>Sayfa Sonu Sol Başlık Açıklama</label>
-                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sol Başlık Açıklama"></textarea>
+                                @*<label>Sayfa Sonu Sol Başlık Açıklama</label>*@
+                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sol Başlık Açıklama">@item.LeftPageBreakDesc</textarea>
                             </div>
                             <div class="col">
-                                <label>Sayfa Sonu Orta Başlık Açıklama</label>
-                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Orta Başlık Açıklama"></textarea>
+                                @*<label>Sayfa Sonu Orta Başlık Açıklama</label>*@
+                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Orta Başlık Açıklama">@item.CenterPageBreakDesc</textarea>
                             </div>
                             <div class="col">
-                                <label>Sayfa Sonu Sağ Başlık Açıklama</label>
-                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sağ Başlık Açıklama"></textarea>
+                                @*<label>Sayfa Sonu Sağ Başlık Açıklama</label>*@
+                                <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sağ Başlık Açıklama">@item.RightPageBreakDesc</textarea>
                             </div>
                         </div>
+                        <hr style="border: none; border-top: 1px solid #00bfff; margin: 10px 0;">
                         <div class="form-group">
                             <label>Sayfa Sonu Başlık</label>
-                            <input type="text" class="form-control" placeholder="Sayfa Sonu Orta Başlık">
+                            <input type="text" class="form-control" placeholder="Sayfa Sonu Orta Başlık" value="@item.PageBreakTitle">
                         </div>
                         <div class="col">
-                            <label>Sayfa Sonu Başlık Açıklama</label>
-                            <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sol Başlık Açıklama"></textarea>
+                            @*<label>Sayfa Sonu Başlık Açıklama</label>*@
+                            <textarea class="form-control" rows="3" placeholder="Sayfa Sonu Sol Başlık Açıklama">@item.PageBreakTitleDesc</textarea>
                         </div>
-                        <div class="row">
+                        <hr style="border: none; border-top: 1px solid #00bfff; margin: 10px 0;">
+                        <div class="row" >
                             <div class="col-md-6 pr-md-1">
                                 <div class="form-group">
                                     <label>Alt Yeşil Alan</label>
-                                    <input type="text" class="form-control" placeholder="Alt Yeşil Alan">
+                                    <input type="text" class="form-control" placeholder="Alt Yeşil Alan" value="@item.BottomGreenTitle">
                                 </div>
                             </div>
                             <div class="col-md-6  px-md-1">
                                 <div class="form-group">
                                     <label>Yeşil Alan Kutu İçi</label>
-                                    <input type="text" class="form-control" placeholder="Yeşil Alan Kutu İçi">
+                                    <input type="text" class="form-control" placeholder="Yeşil Alan Kutu İçi" value="@item.BottomGreenBox">
                                 </div>
                             </div>
                         </div>
