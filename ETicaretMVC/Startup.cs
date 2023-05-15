@@ -54,6 +54,9 @@ namespace ETicaretMVC
             services.AddScoped<IHomeService,HomeManager>();
             services.AddScoped<IHomeDal, EfHomeDal>();
 
+            services.AddScoped<ISignUpService, SignUpManager>();
+            services.AddScoped<ISignUpDal,EfSignUpDal>();
+
             services.AddControllersWithViews();
         }
 

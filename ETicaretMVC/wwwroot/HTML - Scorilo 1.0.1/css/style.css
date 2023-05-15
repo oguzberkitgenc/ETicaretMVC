@@ -184,17 +184,17 @@ h1.latestitems {
 	padding-bottom:20px !Important;
 }
 .homebrowseitems {
-	text-decoration:none;
-	background-color:#00bba7;
-	font-weight:700;
-	font-size:20px;
-	border:0;
-	padding:13px 39px;
-	letter-spacing:1px;
-	margin-top:-20px;
-	display:inline-block;
-	color:#fff;
-	margin-bottom:0px;
+	text-decoration: none;
+	background-color: #40E0D0;
+	font-weight: 700;
+	font-size: 20px;
+	border: 0;
+	padding: 13px 39px;
+	letter-spacing: 1px;
+	margin-top: -20px;
+	display: inline-block;
+	color: #fff;
+	margin-bottom: 0px;
 }
 .homebrowseitemsicon {
 	color:#fff;
@@ -204,7 +204,7 @@ h1.latestitems {
 	margin-bottom:-13px;
 	margin-right:-39px;
 	margin-left:15px;
-	background:rgba(0,0,0,0.2);
+	background:rgba(0, 0, 0, 0.2);
 }
 a.homebrowseitems:hover {
 	color:#fff;
