@@ -1,5 +1,5 @@
 ﻿@using EntityLayer.Tables
-@model List<HomePage>
+@model IndexViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_GeneralLayaout.cshtml";
@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="text-homeimage">
-                @foreach (var item in Model)
+                @foreach (var item in Model.homePages)
                 {
                     <div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
                         @item.HomPageTitle
@@ -24,7 +24,7 @@
 </div>
     </header>
 <!-- STEPS =============================-->
-@foreach (var item in Model)
+@foreach (var item in Model.homePages)
 {
     <div class="item content">
         <div class="container toparea">
@@ -70,7 +70,7 @@
     <div class="container">
         <div class="underlined-title">
             <div class="editContent">
-                <h1 class="text-center latestitems">LATEST ITEMS</h1>
+                <h1 class="text-center latestitems">ÇOK SATANLAR</h1>
             </div>
             <div class="wow-hr type_short">
                 <span class="wow-hr-h">
@@ -166,7 +166,7 @@
 <div class="item content">
     <div class="container text-center">
         <a href="shop.html" class="homebrowseitems">
-            Browse All Products
+            Tüm Ürünlere Göz Atın
             <div class="homebrowseitemsicon">
                 <i class="fa fa-star fa-spin"></i>
             </div>
@@ -175,105 +175,107 @@
 </div>
 <br />
 <!-- AREA =============================-->
-<div class="item content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <i class="fa fa-microphone infoareaicon"></i>
-                <div class="infoareawrap">
-                    <h1 class="text-center subtitle">General Questions</h1>
-                    <p>
-                        Want to buy a theme but not sure if it's got all the features you need? Trouble completing the payment? Or just want to say hi? Send us your message and we will answer as soon as possible!
-                    </p>
-                    <p class="text-center">
-                        <a href="#">- Get in Touch -</a>
-                    </p>
+@foreach (var item3 in Model.homePages)
+{
+    <div class="item content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fa fa-microphone infoareaicon"></i>
+                    <div class="infoareawrap">
+                        <h1 class="text-center subtitle">@item3.LeftPageBreak</h1>
+                        <p>
+                            @item3.LeftPageBreakDesc
+                        </p>
+                        <p class="text-center">
+                            <a href="#">- *** -</a>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <!-- /.col-md-4 col -->
-            <div class="col-md-4">
-                <i class="fa fa-comments infoareaicon"></i>
-                <div class="infoareawrap">
-                    <h1 class="text-center subtitle">Theme Support</h1>
-                    <p>
-                        Theme support issues prevent the theme from working as advertised in the demo. This is a free and guaranteed service offered through our support forum which is found in each theme.
-                    </p>
-                    <p class="text-center">
-                        <a href="#">- Select Theme -</a>
-                    </p>
+                <!-- /.col-md-4 col -->
+                <div class="col-md-4">
+                    <i class="fa fa-comments infoareaicon"></i>
+                    <div class="infoareawrap">
+                        <h1 class="text-center subtitle">@item3.CenterPageBreak</h1>
+                        <p>
+                            @item3.CenterPageBreakDesc
+                        </p>
+                        <p class="text-center">
+                            <a href="#">- *** -</a>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <!-- /.col-md-4 col -->
-            <div class="col-md-4">
-                <i class="fa fa-bullhorn infoareaicon"></i>
-                <div class="infoareawrap">
-                    <h1 class="text-center subtitle">Hire Us</h1>
-                    <p>
-                        If you wish to change an element to look or function differently than shown in the demo, we will be glad to assist you. This is a paid service due to theme support requests solved with priority.
-                    </p>
-                    <p class="text-center">
-                        <a href="#">- Get in Touch -</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- TESTIMONIAL =============================-->
-
-<div class="item content">
-    <div class="container">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="slide-text">
-                <div>
-                    <h2><span class="uppercase">Awesome Support</span></h2>
-                    <img src="http://wowthemes.net/demo/salique/salique-boxed/images/temp/avatar2.png" alt="Awesome Support">
-                    <p>
-                        The support... I can only say it's awesome. You make a product and you help people out any way you can even if it means that you have to log in on their dashboard to sort out any problems that customer might have. Simply Outstanding!
-                    </p>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <!-- /.col-md-4 col -->
+                <div class="col-md-4">
+                    <i class="fa fa-bullhorn infoareaicon"></i>
+                    <div class="infoareawrap">
+                        <h1 class="text-center subtitle">@item3.RightPageBreak</h1>
+                        <p>
+                            @item3.RightPageBreakDesc
+                        </p>
+                        <p class="text-center">
+                            <a href="#">- *** -</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- CALL TO ACTION =============================-->
-<section class="content-block" style="background-color:#00bba7;">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-                <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
-                    <h1 class="callactiontitle">
-                        Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
-                    </h1>
+    <!-- TESTIMONIAL =============================-->
+    <div class="item content">
+        <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="slide-text">
+                    <div>
+                        <h2><span class="uppercase">@item3.PageBreakTitle</span></h2>
+                        <img src="http://wowthemes.net/demo/salique/salique-boxed/images/temp/avatar2.png" alt="Awesome Support">
+                        <p>
+                            @item3.PageBreakTitleDesc
+                        </p>
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-
-<!-- FOOTER =============================-->
-<div class="footer text-center">
-    <div class="container">
-        <div class="row">
-            <p class="footernote">
-                Connect with Scorilo
-            </p>
-            <ul class="social-iconsfooter">
-                <li><a href="#"><i class="fa fa-phone"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            </ul>
-            <p>
-                &copy; 2017 Your Website Name<br />
-                Scorilo - Free template by <a href="https://www.wowthemes.net/">WowThemesNet</a>
-            </p>
+    <!-- CALL TO ACTION =============================-->
+    <section class="content-block" style="background-color:#00bba7;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+                        <h1 class="callactiontitle">
+                            @item3.BottomGreenTitle <span class="callactionbutton"><i class="fa fa-gift"></i> @item3.BottomGreenBox</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+@foreach (var media in Model.socialMedias)
+{
+    <!-- FOOTER =============================-->
+    <div class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <p class="footernote">
+                    Bizim ile bağlantı kurun
+                </p>
+                <ul class="social-iconsfooter">
+                    <li><a href="#"><i class="fa fa-phone"></i></a></li>
+                    <li><a href="@media.FacebookUrl" target="_blank"@media.FacebookUrl><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="@media.TwitterUrl" target="_blank"@media.TwitterUrl><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="@media.YoutubeUrl" target="_blank"@media.YoutubeUrl><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="@media.LinkedinUrl" target="_blank"@media.LinkedinUrl><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+                <p>
+                    &copy; @DateTime.Now.Year.ToString() Oğuz Berkit Genç<br />
+                    Tüm Hakları Saklıdır <a href="https://www.instagram.com/oguzberkitgenc" target="_blank" https: //www.instagram.com/oguzberkitgenc>Benim İle İletişime Geç</a>
+                </p>
+            </div>
         </div>
     </div>
-</div>
+}
 
 
