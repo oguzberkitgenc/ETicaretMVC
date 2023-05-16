@@ -2,9 +2,11 @@ using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
+using DataAccessLayer.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -57,6 +59,7 @@ namespace ETicaretMVC
             services.AddScoped<ISignUpService, SignUpManager>();
             services.AddScoped<ISignUpDal,EfSignUpDal>();
 
+           
             services.AddControllersWithViews();
         }
 

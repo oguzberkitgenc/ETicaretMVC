@@ -4,6 +4,9 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_GeneralLayaout.cshtml";
 }
+@{
+    int loopCount = 0;
+}
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
@@ -81,83 +84,58 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Item Name</h3>
-                            <p>
-                                This is a short excerpt to generally describe what the item is about.
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Purchase</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-                            </p>
+            @foreach (var product in Model.products)
+            {
+                if (loopCount < 3)
+                {
+                    loopCount++;
+                    <div class="col-md-4">
+                        <div class="productbox">
+                            <div class="fadeshop">
+                                <div class="captionshop text-center" style="display: none;">
+                                    <h3>@product.Name</h3>
+                                    <p>
+                                        @product.Description
+                                    </p>
+                                    <p>
+                                        <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Satın Al</a>
+                                        <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Detay</a>
+                                    </p>
+                                </div>
+                                @if (@product.Name.IndexOf("Netflix", StringComparison.OrdinalIgnoreCase) >= 0)
+                                {
+                                    <span class="maxproduct"><img src="~/Images/netflix.png" style="width:600px; height:200px" alt=""></span>
+                                }
+                                @if (@product.Name.IndexOf("Steam", StringComparison.OrdinalIgnoreCase) >= 0)
+                                {
+                                    <span class="maxproduct"><img src="~/Images/steam.png" style="width:600px; height:200px" alt=""></span>
+                                }
+                                @if (@product.Name.IndexOf("iTunes", StringComparison.OrdinalIgnoreCase) >= 0)
+                                {
+                                    <span class="maxproduct"><img src="~/Images/itunes.png" style="width:600px; height:200px" alt=""></span>
+                                }
+                            </div>
+                            <div class="product-details">
+                                <a href="#">
+                                    <h1>@product.Name</h1>
+                                </a>
+                                <span class="price">
+                                    <span class="edd_price">₺@product.Price</span>
+                                </span>
+                            </div>
                         </div>
-                        <span class="maxproduct"><img src="~/HTML - Scorilo 1.0.1/images/product1-1.jpg" alt=""></span>
                     </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Calypso Theme</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
+                }
+                else
+                {
+                    break;
+                }
+
+            }
+
             <!-- /.productbox -->
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Item Name</h3>
-                            <p>
-                                This is a short excerpt to generally describe what the item is about.
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Purchase</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-                            </p>
-                        </div>
-                        <span class="maxproduct"><img src="~/HTML - Scorilo 1.0.1/images/product2.jpg" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>FastSell Theme</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
             <!-- /.productbox -->
-            <div class="col-md-4">
-                <div class="productbox">
-                    <div class="fadeshop">
-                        <div class="captionshop text-center" style="display: none;">
-                            <h3>Item Name</h3>
-                            <p>
-                                This is a short excerpt to generally describe what the item is about.
-                            </p>
-                            <p>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Purchase</a>
-                                <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
-                            </p>
-                        </div>
-                        <span class="maxproduct"><img src="~/HTML - Scorilo 1.0.1/images/product2-3.jpg" alt=""></span>
-                    </div>
-                    <div class="product-details">
-                        <a href="#">
-                            <h1>Biscaya Theme</h1>
-                        </a>
-                        <span class="price">
-                            <span class="edd_price">$49.00</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     </div>
@@ -264,10 +242,10 @@
                 </p>
                 <ul class="social-iconsfooter">
                     <li><a href="#"><i class="fa fa-phone"></i></a></li>
-                    <li><a href="@media.FacebookUrl" target="_blank"@media.FacebookUrl><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="@media.TwitterUrl" target="_blank"@media.TwitterUrl><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="@media.YoutubeUrl" target="_blank"@media.YoutubeUrl><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="@media.LinkedinUrl" target="_blank"@media.LinkedinUrl><i class="fa fa-pinterest"></i></a></li>
+                    <li><a href="@media.FacebookUrl" target="_blank" @media.FacebookUrl><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="@media.TwitterUrl" target="_blank" @media.TwitterUrl><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="@media.YoutubeUrl" target="_blank" @media.YoutubeUrl><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="@media.LinkedinUrl" target="_blank" @media.LinkedinUrl><i class="fa fa-pinterest"></i></a></li>
                 </ul>
                 <p>
                     &copy; @DateTime.Now.Year.ToString() Oğuz Berkit Genç<br />
