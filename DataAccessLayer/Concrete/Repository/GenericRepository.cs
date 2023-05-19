@@ -20,6 +20,7 @@ namespace DataAccessLayer.Concrete.Repository
 
         public T GetById(int id)
         {
+            //return context.Set<T>().ToList()[id];  dene bunu
             using var context = new ETicaretContext();
             return context.Set<T>().Find(id);
         }

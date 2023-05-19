@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Tables.User
+@{
+    ViewData["Title"] = "UpdateUser";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+<h4>Kullanıcı Düzenleme Sayfası</h4>
+<form method="post">
+    @Html.HiddenFor(x=>x.UserId)
+    <div class="row" style="margin-top:5px">
+        <div class="col">
+            <label>Adı</label>
+            <input type="text" class="form-control" placeholder="Adı" asp-for="Name" />
+        </div>
+        <div class="col">
+            <label>Soyadı</label>
+            <input type="text" class="form-control" placeholder="Soyadı" asp-for="SurName" />
+        </div>
+    </div>
+    <div class="row" style="margin-top:5px">
+        <div class="col">
+            <label>Mail</label>
+            <input type="email" class="form-control" placeholder="Mail Adresi" asp-for="Email" />
+        </div>
+        <div class="col">
+            <label>Şifre</label>
+            <input type="tel" class="form-control" placeholder="Şifresi" asp-for="Password" />
+        </div>
+        <div class="col">
+            <label>Telefon Numarası</label>
+            <input type="tel" class="form-control" placeholder="Mail Adresi" asp-for="Phone" />
+        </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-info">Kaydet</button>
+</form>
+
+

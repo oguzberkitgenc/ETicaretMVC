@@ -28,5 +28,23 @@ namespace ETicaretMVC.Controllers
             _signUpService.Insert(user);
             return RedirectToAction("Index");
         }
+        public IActionResult DeleteUser(int id)
+        {
+            var values = _signUpService.GetById(id);
+            _signUpService.Delete(values);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult UpdateUser(int id)
+        {
+            var values = _signUpService.GetById(id);
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult UpdateUser(User user)
+        {
+            _signUpService.Update(user);
+            return RedirectToAction("Index");
+        }
     }
 }

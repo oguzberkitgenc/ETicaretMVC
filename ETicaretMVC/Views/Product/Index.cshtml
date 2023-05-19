@@ -14,6 +14,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Logo</th>
                             <th>Ürün Adı</th>
                             <th>Satış Fiyatı</th>
                             <th>Stok</th>
@@ -23,6 +24,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
+                                <td>@item.ProductID</td>
                                 <td class="py-1">
                                     @if (@item.Name.IndexOf("iTunes", StringComparison.OrdinalIgnoreCase) >= 0)
                                     {
@@ -40,8 +42,8 @@
                                 <td>@item.Name</td>
                                 <td>@item.Price</td>
                                 <td>@item.Stock</td>
-                                <td><a href="" class="btn btn-outline-danger">Sil</a></td>
-                                <td><a href="" class="btn btn-outline-success">Düzenle</a></td>
+                                <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Product/ProductUpdate/@item.ProductID" class="btn btn-outline-success">Düzenle</a></td>
                             </tr>
                         }
                     </tbody>
