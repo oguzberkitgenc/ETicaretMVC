@@ -2,6 +2,7 @@
 using EntityLayer.Tables;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ETicaretMVC.Controllers
@@ -16,7 +17,7 @@ namespace ETicaretMVC.Controllers
         }
         public IActionResult Index()
         {
-            var values = _productService.GetListAll();
+            var values = _productService.GetListAll().OrderBy(x => x.Name).ThenBy(x => x.Price).ToList();
             return View(values);
         }
         [HttpGet]

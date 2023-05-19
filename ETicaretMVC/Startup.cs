@@ -30,9 +30,9 @@ namespace ETicaretMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<INetflixService, NetflixManager>();
-            services.AddScoped<INetflixDal,EfNetflixDal>();
+            services.AddScoped<INetflixDal, EfNetflixDal>();
 
-            services.AddScoped<ISteamService,SteamManager>();
+            services.AddScoped<ISteamService, SteamManager>();
             services.AddScoped<ISteamDal, EfSteamDal>();
 
             services.AddScoped<IITunesService, ITunesManager>();
@@ -41,7 +41,7 @@ namespace ETicaretMVC
             services.AddScoped<IAdminService, AdminManager>();
             services.AddScoped<IAdminDal, EfAdminDal>();
 
-            services.AddScoped<ISocialMediaService,SocialMediaManager>();
+            services.AddScoped<ISocialMediaService, SocialMediaManager>();
             services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 
             services.AddScoped<IAdresService, AdresManager>();
@@ -51,15 +51,17 @@ namespace ETicaretMVC
             services.AddScoped<IHomePageDal, EfHomePageDal>();
 
             services.AddScoped<IProductService, ProductManager>();
-            services.AddScoped<IProductDal,EfProductDal>();
+            services.AddScoped<IProductDal, EfProductDal>();
 
-            services.AddScoped<IHomeService,HomeManager>();
+            services.AddScoped<IHomeService, HomeManager>();
             services.AddScoped<IHomeDal, EfHomeDal>();
 
             services.AddScoped<ISignUpService, SignUpManager>();
-            services.AddScoped<ISignUpDal,EfSignUpDal>();
+            services.AddScoped<ISignUpDal, EfSignUpDal>();
 
-           
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<IContactDal, EfContactDal>();
+
             services.AddControllersWithViews();
         }
 

@@ -1,0 +1,54 @@
+﻿
+@model EntityLayer.Tables.Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GeneralLayaout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="text-pageheader">
+            <div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.0s">
+                İletişim    
+            </div>
+        </div>
+    </div>
+</div>
+<section class="item content">
+    <div class="container toparea">
+        <div class="underlined-title">
+            <div class="editContent">
+                <h1 class="text-center latestitems">Fikirlerin bizim için değerli</h1>
+            </div>
+            <div class="wow-hr type_short">
+                <span class="wow-hr-h">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="done">
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        Mesajınız gönderildi. Teşekkür ederim!
+                    </div>
+                </div>
+                <form method="post" action="#" id="contactform">
+                    <div class="form">
+                        <input type="text" placeholder="Adınız *" asp-for="Name">
+                        <input type="text" placeholder="E-Mail Adresiniz *" asp-for="Email">
+                        <input type="text" placeholder="Mesajın Konusu *" asp-for="Subject">
+                        <textarea  rows="7" asp-for="Description" placeholder="Mesajın İçeriği *"></textarea>
+                        <input type="submit" id="submit" class="clearfix btn" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+

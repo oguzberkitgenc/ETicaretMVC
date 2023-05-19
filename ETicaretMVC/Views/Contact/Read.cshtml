@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Tables.Contact
+@{
+    ViewData["Title"] = "Read";
+    Layout = "~/Views/Shared/_AdminLayaout.cshtml";
+}
+
+<div class="row">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="title">Şirket Bilgileri</h5>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                @Html.HiddenFor(x=>x.ContactID)
+                <div class="row">
+                    <div class="col-md-6 pr-md-1">
+                        <div class="form-group">
+                            <label>Adı</label>
+                            <input type="text" name="Name" class="form-control" placeholder="Adı" value="@Model.Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-1">
+                        <div class="form-group">
+                            <label>E-Mail</label>
+                            <input type="email" name="Email" class="form-control" placeholder="Mail Adresi" value="@Model.Email">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pr-md-1">
+                        <div class="form-group">
+                            <label>Konusu</label>
+                            <input type="text" name="Subject" class="form-control" placeholder="Konu" value="@Model.Subject">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-1">
+                        <div class="form-group">
+                            <label>Mesaj</label>
+                            <input type="text" name="Description" class="form-control" placeholder="Mesaj" value="@Model.Description">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

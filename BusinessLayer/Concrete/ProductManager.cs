@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
 
         public List<Product> GetListAll()
         {
-          return _productDal.GetListAll();
+            return _productDal.GetListAll();
         }
 
         public void Insert(Product t)
