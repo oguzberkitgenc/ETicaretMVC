@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace ETicaretMVC.Controllers
 {
@@ -14,7 +15,7 @@ namespace ETicaretMVC.Controllers
 
         public IActionResult Index()
         {
-            var values =_steamService.GetListAll();
+            var values =_steamService.GetListAll().OrderBy(x=>x.Price).ToList();
             return View(values);
         }
     }
