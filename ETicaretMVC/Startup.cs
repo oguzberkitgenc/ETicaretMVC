@@ -62,6 +62,9 @@ namespace ETicaretMVC
             services.AddScoped<IContactService, ContactManager>();
             services.AddScoped<IContactDal, EfContactDal>();
 
+            services.AddScoped<IBasketService, BasketManager>();
+            services.AddScoped<IBasketDal, EfBasketDal>();
+
             services.AddControllersWithViews();
         }
 

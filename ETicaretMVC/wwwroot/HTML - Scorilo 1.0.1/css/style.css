@@ -58,14 +58,41 @@ header .navbar-white {
 	background:#fff;
 	box-shadow:0px 3px 2px 0px rgba(50,50,50,0.1);
 }
+/*.item.header {
+	background-image: url(../images/netflix-intro-netflix.gif);
+	background-repeat: no-repeat;
+	background-position: 0% top;
+	background-size: cover;
+	background-attachment: scroll;
+	background-color: rgba(0,0,0,0);
+}*/
 .item.header {
-	background-image:url(../images/homeimg.jpg);
-	background-repeat:no-repeat;
-	background-position:0% top;
-	background-size:cover;
-	background-attachment:scroll;
-	background-color:rgba(0,0,0,0);
+	background-repeat: no-repeat;
+	background-position: 0% top;
+	background-size: cover;
+	background-attachment: scroll;
+	background-color: rgba(0,0,0,0);
+	animation: slideshow 10s infinite;
 }
+
+@keyframes slideshow {
+	0% {
+		background-image: url(../images/itunes.gif);
+	}
+
+	33.33% {
+		background-image: url(../images/netflix.gif);
+	}
+
+	66.66% {
+		background-image: url(../images/steam.gif);
+	}
+
+	100% {
+		background-image: url(../images/itunes.gif);
+	}
+}
+
 .navbar-nav,.navbar>.container .navbar-brand {
 	font-family:Dosis;
 	text-transform:uppercase;

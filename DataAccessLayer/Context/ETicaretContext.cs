@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Context
 {
-    public class ETicaretContext  :  DbContext
+    public class ETicaretContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -16,6 +16,6 @@ namespace DataAccessLayer.Context
         public DbSet<Adress> Adress { get; set; }
         public DbSet<HomePage> HomePagess { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
-
+        public DbSet<Basket> Baskets { get; set; }
     }
 }

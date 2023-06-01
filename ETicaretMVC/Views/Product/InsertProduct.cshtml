@@ -4,19 +4,22 @@
     Layout = "~/Views/Shared/_AdminLayaout.cshtml";
 }
 
+<h4>Ürün Ekleme Sayfası</h4>
 <form method="post">
-    <h4>Ürün Ekleme Sayfası</h4>
     <div>
         <label>Ürün Adı</label>
+        <span asp-validation-for="Name" class="text-danger"></span>
         <input type="text" class="form-control" placeholder="Ürün Adı" asp-for="Name" />
     </div>
     <div class="row" style="margin-top:5px">
         <div class="col">
             <label>Satış Fiyatı</label>
+            <span asp-validation-for="Price" class="text-danger"></span>
             <input type="text" class="form-control" placeholder="Satış Fiyatı" asp-for="Price" />
         </div>
         <div class="col">
             <label>Stok</label>
+            <span asp-validation-for="Stock" class="text-danger"></span>
             <input type="text" class="form-control" placeholder="Stok" asp-for="Stock" />
         </div>
     </div>

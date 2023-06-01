@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Abstract;
+using BusinessLayer.ValidationRules;
 using EntityLayer.Tables;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ETicaretMVC.Controllers
@@ -20,8 +22,21 @@ namespace ETicaretMVC.Controllers
         [HttpPost]
         public IActionResult Index(Contact contact)
         {
-            _contactService.Insert(contact);
-            return RedirectToAction("Index");
+            ContactValidator validationRules = new ContactValidator();
+            ValidationResult result = validationRules.Validate(contact);
+            if (result.IsValid)
+            {
+                _contactService.Insert(contact);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         //Admin Arayüzü
         public IActionResult Details()

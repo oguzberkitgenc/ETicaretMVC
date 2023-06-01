@@ -1,19 +1,21 @@
 ﻿using BusinessLayer.Abstract;
+using BusinessLayer.ValidationRules;
 using EntityLayer.Tables;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ETicaretMVC.Controllers
 {
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
+        private readonly IBasketService _basketService;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService,IBasketService basketService)
         {
             _productService = productService;
+            _basketService = basketService;
         }
         public IActionResult Index()
         {
@@ -28,8 +30,21 @@ namespace ETicaretMVC.Controllers
         [HttpPost]
         public IActionResult InsertProduct(Product p)
         {
-            _productService.Insert(p);
-            return RedirectToAction("Index");   
+            ProductValidator validationRules = new ProductValidator();
+            ValidationResult result = validationRules.Validate(p);
+            if (result.IsValid)
+            {
+                _productService.Insert(p);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         public IActionResult DeleteProduct(int id)
         {
@@ -44,10 +59,28 @@ namespace ETicaretMVC.Controllers
             return View(values);
         }
         [HttpPost]
-        public IActionResult ProductUpdate(Product product)
+        public IActionResult ProductUpdate(Product product2)
         {
-            _productService.Update(product);
-            return RedirectToAction("Index");
+            ProductValidator validationRules2 = new ProductValidator();
+            ValidationResult result2 = validationRules2.Validate(product2);
+            if (result2.IsValid)
+            {
+                _productService.Update(product2);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result2.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+        }
+        public IActionResult BasketAdd(Basket basket,Product product)
+        {
+            _basketService.Insert(basket);
+            return View();
         }
     }
 }

@@ -4,14 +4,16 @@ using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(ETicaretContext))]
-    partial class ETicaretContextModelSnapshot : ModelSnapshot
+    [Migration("20230522104635_mig_basket_update")]
+    partial class mig_basket_update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,6 +93,9 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
+
+                    b.Property<string>("ProductName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Sales")
                         .HasColumnType("decimal(18,2)");

@@ -1,6 +1,9 @@
 ﻿using BusinessLayer.Abstract;
+using BusinessLayer.ValidationRules;
 using EntityLayer.Tables;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace ETicaretMVC.Controllers
 {
@@ -27,8 +30,21 @@ namespace ETicaretMVC.Controllers
         [HttpPost]
         public IActionResult UpdateHomePage(HomePage homePage)
         {
-            _homePageService.Update(homePage);
-            return RedirectToAction("Index");
+            HomePageValidator validationRules = new HomePageValidator();
+            ValidationResult result = validationRules.Validate(homePage);
+            if (result.IsValid)
+            {
+                _homePageService.Update(homePage);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }
