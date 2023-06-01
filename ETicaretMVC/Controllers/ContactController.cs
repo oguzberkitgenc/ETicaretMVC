@@ -17,6 +17,7 @@ namespace ETicaretMVC.Controllers
         public IActionResult Index()
         {
             return View();
+            //acıklama test
         }
         //Kullanıcı Ara Yüzü
         [HttpPost]
